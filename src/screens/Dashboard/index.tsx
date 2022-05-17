@@ -75,7 +75,7 @@ export function Dashboard() {
     const dataKey = '@gofinances:transactions';
     /* await AsyncStorage.removeItem(dataKey) */
   const response = await AsyncStorage.getItem(dataKey)
-  const transactions = response? JSON.parse(response): [];
+  const transactions : DataListProps[]= response? JSON.parse(response): [];
   let entriesTotal = 0;
   let expensiveTotal = 0;
 

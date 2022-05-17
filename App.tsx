@@ -5,6 +5,8 @@ import 'intl/locale-data/jsonp/pt-BR'
 import { ThemeProvider } from 'styled-components';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
+import { StatusBar } from 'react-native';
+
 import theme from './src/global/styles/theme'
 import {NavigationContainer} from '@react-navigation/native'
 
@@ -38,6 +40,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
+      <StatusBar />
       <AppRoutes />
       </NavigationContainer>
       </GestureHandlerRootView>
