@@ -12,6 +12,8 @@ import {NavigationContainer} from '@react-navigation/native'
 
 import { AppRoutes} from './src/routes/app.routes'
 
+import { SignIn } from './src/screens/SignIn';
+
 
 import  Apploading from 'expo-app-loading'
 
@@ -41,7 +43,7 @@ export default function App() {
       <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
       <StatusBar />
-      <AppRoutes />
+      <SignIn />
       </NavigationContainer>
       </GestureHandlerRootView>
     </ThemeProvider>

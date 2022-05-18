@@ -74,7 +74,8 @@ export function Dashboard() {
   async function loadTransactions(){
     const dataKey = '@gofinances:transactions';
     /* await AsyncStorage.removeItem(dataKey) */
-  const response = await AsyncStorage.getItem(dataKey)
+    const response = await AsyncStorage.getItem(dataKey)
+    console.log(response)
   const transactions : DataListProps[]= response? JSON.parse(response): [];
   let entriesTotal = 0;
   let expensiveTotal = 0;
@@ -145,8 +146,6 @@ export function Dashboard() {
 
   useEffect(()=>{
     loadTransactions()
-
-
   },[])
 
   useFocusEffect(useCallback(()=>{loadTransactions()},[]))
