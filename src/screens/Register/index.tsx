@@ -47,6 +47,7 @@ const schema = Yup.object().shape({
 })
 
 import { CategorySelect } from '../CategorySelect'
+import { useAuth } from '../../hooks/auth'
 
 export function Register() {
  
@@ -58,6 +59,8 @@ export function Register() {
   })
   const [transactionType, setTransactionType] = useState('')
   const [categoryModalOpen, setCategoryMoralOpen] = useState(false)
+
+  const {user} = useAuth()
 
   const {
     control,
@@ -99,7 +102,7 @@ if(category.key === 'category'){
       date: new Date()
     }
     try{
-       const dataKey = '@gofinances:transactions';
+       const dataKey = `@gofinances:transactions_user:${user.id}`;
       const data = await AsyncStorage.getItem(dataKey)
       const currentData = data? JSON.parse(data):[];
 
